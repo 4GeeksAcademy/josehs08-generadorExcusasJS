@@ -6,16 +6,21 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  document.getElementById("excusa").innerHTML = generarExcusa(who,action,what,when);
+  document.getElementById("excusa").innerHTML = generarExcusa();
 };
 
-let who = ["The dog", "My grandma", "The mailman", "My bird"];
-let action = ["ate", "peed", "crushed", "broke"];
-let what = ["my homework", "my phone", "the car"];
-let when = ["before the class","when I was sleeping","while I was exercising","during my lunch","while I was praying"];
-
-function generarExcusa(who, action, what, when) {
+function generarExcusa() {
   let excusa = "";
+  let who = ["The dog", "My grandma", "The mailman", "My bird"];
+  let action = ["ate", "peed", "crushed", "broke"];
+  let what = ["my homework", "my phone", "the car"];
+  let when = [
+    "before the class",
+    "when I was sleeping",
+    "while I was exercising",
+    "during my lunch",
+    "while I was praying",
+  ];
   excusa = excusa + who[Math.floor(Math.random() * 4)] + " ";
   excusa = excusa + action[Math.floor(Math.random() * 4)] + " ";
   excusa = excusa + what[Math.floor(Math.random() * 3)] + " ";
