@@ -5,10 +5,6 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() {
-  document.getElementById("excusa").innerHTML = generarExcusa();
-};
-
 function generarExcusa() {
   let excusa = "";
   let who = ["The dog", "My grandma", "The mailman", "My bird"];
@@ -19,12 +15,16 @@ function generarExcusa() {
     "when I was sleeping",
     "while I was exercising",
     "during my lunch",
-    "while I was praying",
+    "while I was praying"
   ];
-  excusa = excusa + who[Math.floor(Math.random() * 4)] + " ";
-  excusa = excusa + action[Math.floor(Math.random() * 4)] + " ";
-  excusa = excusa + what[Math.floor(Math.random() * 3)] + " ";
-  excusa = excusa + when[Math.floor(Math.random() * 5)] + " ";
+  excusa = excusa + who[Math.floor(Math.random() * who.length)] + " ";
+  excusa = excusa + action[Math.floor(Math.random() * action.length)] + " ";
+  excusa = excusa + what[Math.floor(Math.random() * what.length)] + " ";
+  excusa = excusa + when[Math.floor(Math.random() * when.length)] + " ";
 
   return excusa;
 }
+
+window.onload = function() {
+  document.getElementById("excusa").innerHTML = generarExcusa();
+};
